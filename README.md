@@ -1,6 +1,6 @@
 # BINARY-TREE-JS
 
- Repository created by `Rafael Carvalho Monteiro` from represent a Binary Tree Search Algorithm
+ Repository created by `Rafael Carvalho Monteiro` to represent a Binary Tree Data Structure Algorithm
 
 ## How to run
 
