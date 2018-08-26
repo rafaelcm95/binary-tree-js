@@ -1,11 +1,11 @@
 export default class Node {
-  constructor(
+  constructor({
     key,
     parent = null,
     leftChild = null,
     rightChild = null,
     level = 0
-  ) {
+  }) {
     this.key = key;
     this.parent = parent;
     this.leftChild = leftChild;

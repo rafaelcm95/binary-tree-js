@@ -1,11 +1,14 @@
 import Node from './classes/node';
-import { printNode } from './helpers';
+import { printNode, log, fake } from './helpers';
+import fakeNodes from './payloads/fake-nodes';
 
-let root = null;
-let numbers = [10, 7, 15, 17, 8, 13, 21, 4, 19];
+const root = fake(fakeNodes);
 
-numbers.forEach(number => {
-  !root ? root = new Node(number) : root.add(new Node(number));
-});
+log.log('Min Node:');
+log.result(root.min);
 
-console.log(printNode(root));
+log.log('Max Node:');
+log.result(root.max);
+
+log.log('Print Node in order:');
+printNode(root);
