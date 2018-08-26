@@ -1,4 +1,4 @@
-module.exports = class Node {
+export default class Node {
   constructor(
     key,
     parent = null,
@@ -47,43 +47,14 @@ module.exports = class Node {
 
   find(key) {
     const isMinorThan = this.key < key;
+    const isEqualThan = this.key === key;
 
-    if (this.key === key) return this;
+    if (isEqualThan) return this;
 
     if (isMinorThan) {
       return !this._hasLeftChild ? this.leftChild.find(key) : null
     }
     
     return !this._hasRightChild ? this.rightChild.find(key) : null
-  }
-
-  inOrder() {
-    if (this._hasLeftChild) this.leftChild.inOrder();
-    console.log(this.key);
-    if (this._hasRightChild) this.rightChild.inOrder();
-  }
-
-  preOrder() {
-    console.log(this.key);
-    if (this._hasLeftChild) this.leftChild.inOrder();
-    if (this._hasRightChild) this.rightChild.inOrder();
-  }
-
-  breadthFirst() {
-    let queue = [];
-    queue.push(this);
-
-    while (queue.length > 0) {
-      let current = queue.shift();
-      console.log(current.key);
-
-      if (current._hasLeftChild) {
-        queue.push(current.leftChild);
-      }
-
-      if (current._hasRightChild) {
-        queue.push(current.rightChild);
-      }
-    }
   }
 }
